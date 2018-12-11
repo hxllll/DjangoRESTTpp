@@ -4,5 +4,8 @@
 ##Admin
 后台管理
 
-##Chinema
+##Cinema
 影院
+
+##Viewer
+观影者
