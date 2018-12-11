@@ -25,7 +25,7 @@ SECRET_KEY = '%-!k@9*x%2)0lw06@7%-#+rg+i!&pgc(^ioloryvl)(+fe(^-c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -81,8 +81,8 @@ WSGI_APPLICATION = 'DjangoRESTTpp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'DjangoRESTTpp',
-        'USER': 'huxl',
+        'NAME': 'djangoresttpp',
+        'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'www.huxiulin.top',
         'PORT': 3306
@@ -128,3 +128,17 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ADMIN_USER_TIMEOUT = 60 * 60 * 24 * 7
+
+ADMIN_USERS = ("Rick", "Admin", "Root")
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://www.huxiulin.top:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
